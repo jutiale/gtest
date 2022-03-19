@@ -6,8 +6,8 @@ CONFIG -= app_bundle
 CONFIG += thread
 CONFIG -= qt
 
-QMAKE_CXXFLAGS += -Wall -Wextra -Werror
-QMAKE_CFLAGS += -Wall -Wextra -Werror
+QMAKE_CXXFLAGS += -Wall -Wextra
+QMAKE_CFLAGS += -Wall -Wextra
 
 # gcov
 QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage
@@ -16,15 +16,11 @@ LIBS += -lgcov
 
 DEFINES += INPUTDIR=\\\"$$PWD/input/\\\"
 
-HEADERS +=     tst_test1.h \
-    ../app/myfunc.h \
+HEADERS +=     \
     ../app/roots.h \
-    fibonachi_test.h \
-    roots_test.h \
-    tst_stdout.h
+    roots_test.h
 
 SOURCES +=     main.cpp \
-    ../app/myfunc.c \
     ../app/roots.c
 
 INCLUDEPATH += ../app
