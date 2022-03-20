@@ -40,4 +40,20 @@ TEST(roots, float_roots) {
     ASSERT_TRUE((fabs(testRoots.x1 - x1) < infinitesimal_quantities && fabs(testRoots.x2 - x2) < infinitesimal_quantities) || (fabs(testRoots.x1 - x2) < infinitesimal_quantities && fabs(testRoots.x2 - x1) < infinitesimal_quantities));
 }
 
+TEST(roots, Aeq0) {
+    Roots testRoots = roots(0, 2, 4);
+    ASSERT_EQ(testRoots.count, 1);
+    ASSERT_TRUE(testRoots.x1 == -2);
+}
+
+TEST(roots, ABeq0) {
+    Roots testRoots = roots(0, 0, 14);
+    ASSERT_TRUE(testRoots.flag == 1);
+}
+
+TEST(roots, alleq0) {
+    Roots testRoots = roots(0, 0, 0);
+    ASSERT_TRUE(testRoots.flag == 1);
+}
+
 #endif // ROOTS_TEST_H

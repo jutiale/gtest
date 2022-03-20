@@ -5,6 +5,17 @@
 
 Roots roots(double a, double b, double c) {
     Roots result;
+    if (a == 0) {
+        if (b == 0) {
+            result.flag = 1;
+            return result;
+        }
+    }
+    if (a == 0) {
+        result.count = 1;
+        result.x1 = -c / b;
+        return result;
+    }
     double d = b * b - 4 * a * c;
     if (d < 0) {
         result.count = 0;
