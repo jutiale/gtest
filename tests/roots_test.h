@@ -12,7 +12,6 @@ extern "C" {
 #include "roots.h"
 }
 
-
 TEST(roots, Dgt0) {
     int x1 = -5, x2 = -6;
 
